@@ -40,4 +40,14 @@ ActiveRecord::Schema.define(version: 2022_12_29_210453) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  # Matches validations 
+  # team one and two have to be there 
+  # Stadium has to be there. 
+  
+
+  # Stadium 
+
+  # Name presence true 
+  # 
+
 end
