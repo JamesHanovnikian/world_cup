@@ -10,7 +10,11 @@ class TeamsController < ApplicationController
       ranking: params[:ranking],
       jersey_color: params[:jersey_color],
     )
-    render json: team.as_json
+    if team.save
+      render json: team.as_json
+    else
+      render json: { message: team.errors.full_messages }
+    end
   end
 
   def show

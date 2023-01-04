@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   post "/matches" => "matches#create"
   patch "/matches/:id" => "matches#update"
 
+  post "/users" => "users#create"
+  post "/sessions" => "sessions#create"
 end

@@ -10,8 +10,11 @@ class StadiumsController < ApplicationController
       capacity: params[:capacity],
       location: params[:location],
     )
-    stadium.save
-    render json: stadium.as_json
+    if stadium.save
+      render json: stadium.as_json
+    else
+      render json: { message: stadium.errors.full_messages }
+    end
   end
 
   def show
