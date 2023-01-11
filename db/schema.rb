@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_09_224649) do
+ActiveRecord::Schema.define(version: 2023_01_10_003430) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "matches", force: :cascade do |t|
     t.datetime "date"
-    t.integer "team_one"
-    t.integer "team_two"
+    t.integer "home_team_id"
+    t.integer "away_team_id"
     t.integer "stadium_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -33,20 +33,41 @@ ActiveRecord::Schema.define(version: 2023_01_09_224649) do
   end
 
   create_table "teams", force: :cascade do |t|
-    t.string "name"
-    t.integer "ranking"
-    t.string "jersey_color"
+    t.string "name", null: false
+    t.integer "seed_rank", null: false
+    t.string "jersey_primary", null: false
+    t.string "jersey_secondary", null: false
+    t.integer "tournament_group_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "group"
+  end
+
+  create_table "tournament_groups", force: :cascade do |t|
+    t.bigint "tournament_id", null: false
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tournament_id"], name: "index_tournament_groups_on_tournament_id"
+  end
+
+  create_table "tournaments", force: :cascade do |t|
+    t.string "host_location"
+    t.integer "max_teams"
+    t.integer "max_groups"
+    t.integer "teams_per_group"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "password_digest", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "tournament_groups", "tournaments"
 end
