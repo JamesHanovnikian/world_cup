@@ -192,7 +192,7 @@ Team.create(
 
 Team.create(
   name: "Costa Rica",
-  seed_rank: 4,
+  seed_rank: 4,x
   jersey_primary: "Red",
   jersey_secondary: "White",
   tournament_group: TournamentGroup.find_by(name: "E"),
@@ -293,3 +293,47 @@ Team.create(
   jersey_secondary: "Yellow",
   tournament_group: TournamentGroup.find_by(name: "H"),
 )
+
+Stadium.create(
+  name: "Al Bayt", 
+  location: "Al Khor", 
+  capacity: 60000, 
+)
+
+Stadium.create(
+  name: "Education City", 
+  location: "Al Rayyan", 
+  capacity: 40000, 
+)
+
+
+Stadium.create(
+  name: "Stadium 974", 
+  location: "Doha", 
+  capacity: 40000, 
+)
+
+Stadium.create(
+  name: "Khalifa International Stadium", 
+  location: "Doha", 
+  capacity: 40000, 
+)
+
+Stadium.create(
+  name: "Ahmed Bin Ali Stadium", 
+  location: "Umm Al Afaei", 
+  capacity: 40000, 
+)
+
+Stadium.create(
+  name: "Al Thummama Stadium", 
+  location: "Doha", 
+  capacity: 40000, 
+)
+
+Stadium.create(
+  name: "Al Janoub", 
+  location: "Al Wakrah", 
+  capacity: 40000, 
+)
+
