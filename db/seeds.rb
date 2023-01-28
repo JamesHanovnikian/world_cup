@@ -1,13 +1,7 @@
 Tournament.destroy_all
 
-tournament = Tournament.create(
-  host_location: "Qatar",
-  max_teams: 32,
-  max_groups: 8,
-  teams_per_group: 4,
-  start_at: Date.new(2022, 11, 20),
-  end_at: Date.new(2022, 12, 13),
-)
+tournament = FactoryBot.create(:tournament)
+
 
 tournament.tournament_groups.create(
   [
@@ -37,12 +31,9 @@ tournament.tournament_groups.create(
     },
   ]
 )
-
-Team.create(
-  name: "Argentina",
-  seed_rank: 1,
-  jersey_primary: "White",
-  jersey_secondary: "Blue",
+FactoryBot.create(:team, 
+  :argentina, 
+  seed_rank: 1, 
   tournament_group: TournamentGroup.find_by(name: "C"),
 )
 
