@@ -12,6 +12,36 @@ class Team < ApplicationRecord
         wins += 1
       end
     end
+    away_matches = Match.where(away_team_id: id)
+    away_matches.each do |away_match|
+      if away_match.away_goals > away_match.home_goals
+        wins += 1
+      end
+    end
     wins
+  end
+
+  def group_draws
+    draws = 0
+    matches = Match.where(home_team_id: id) && Match.where(away_team_id: id)
+    matches.each do |match|
+      if match.home_goals == match.away_goals
+        draws += 1
+      end
+    end
+    draws
+  end
+
+  def total_goals
+    goals = 0
+    home_matches = Match.where(home_team_id: id)
+    home_matches.each do |home_match|
+      goals += home_match.home_goals
+    end
+    away_matches = Match.where(away_team_id: id)
+    away_matches.each do |away_match|
+      goals += away_match.away_goals
+    end
+    goals
   end
 end
