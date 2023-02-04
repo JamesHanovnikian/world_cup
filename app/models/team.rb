@@ -44,4 +44,25 @@ class Team < ApplicationRecord
     end
     goals
   end
+
+  def goals_allowed
+    goals_allowed = 0
+
+    home_matches = Match.where(home_team_id: id)
+
+    home_matches.each do |home_match|
+      goals_allowed += home_match.away_goals
+    end
+
+    away_matches = Match.where(away_team_id: id)
+    away_matches.each do |away_match|
+      goals_allowed += away_match.home_goals
+    end
+    goals_allowed
+  end
+
+  def goal_diff
+    goal_diff = total_goals - goals_allowed
+    goal_diff
+  end
 end
