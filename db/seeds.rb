@@ -328,3 +328,6 @@ Stadium.create(
   capacity: 40000, 
 )
 
+Match.create(
+  
+)

@@ -47,9 +47,7 @@ class Team < ApplicationRecord
 
   def goals_allowed
     goals_allowed = 0
-
     home_matches = Match.where(home_team_id: id)
-
     home_matches.each do |home_match|
       goals_allowed += home_match.away_goals
     end
@@ -64,5 +62,11 @@ class Team < ApplicationRecord
   def goal_diff
     goal_diff = total_goals - goals_allowed
     goal_diff
+  end
+
+  def total_points
+    points = 0
+    points = (group_wins * 3) + (group_draws * 1)
+    points
   end
 end
