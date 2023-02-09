@@ -2,7 +2,7 @@ class TeamsController < ApplicationController
   def index
     p current_user
     teams = Team.all
-    render json: teams.as_json
+    render json: teams
   end
 
   def create

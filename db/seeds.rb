@@ -356,5 +356,3 @@ Stadium.create(
   location: "Al Wakrah",
   capacity: 40000,
 )
-
-Match.create()

@@ -11,9 +11,9 @@ class TournamentGroup < ApplicationRecord
 
       if points > current_highest_points
         current_highest_points = points
+        winner = []
         winner = team
       end
-
       winner
     end
   end
