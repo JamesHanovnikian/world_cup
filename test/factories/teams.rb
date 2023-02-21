@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :team do
-    name { "Vietnam" }
+    sequence(:name) { |n| "Country#{n}" }
     seed_rank { (1..8).to_a.sample }
     tournament_group
     jersey_primary { "Blue" }

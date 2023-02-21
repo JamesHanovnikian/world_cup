@@ -248,3 +248,4 @@ Stadium.create(
   location: "Al Wakrah",
   capacity: 40000,
 )
+
