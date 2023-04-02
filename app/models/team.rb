@@ -38,27 +38,15 @@ class Team < ApplicationRecord
   end
 
   def goals_allowed
-    goals_allowed = 0
-    home_matches = Match.where(home_team_id: id)
-    home_matches.each do |home_match|
-      goals_allowed += home_match.away_goals
-    end
-
-    away_matches = Match.where(away_team_id: id)
-    away_matches.each do |away_match|
-      goals_allowed += away_match.home_goals
-    end
-    goals_allowed
+    Match.where(home_team: self).sum(&:away_goals) +
+      Match.where(away_team: self).sum(&:home_goals)
   end
 
   def goal_diff
-    goal_diff = total_goals - goals_allowed
-    goal_diff
+    total_goals - goals_allowed
   end
 
   def total_points
-    points = 0
-    points = (group_wins * 3) + (group_draws * 1)
-    points
+    (group_wins * 3) + (group_draws * 1)
   end
 end
