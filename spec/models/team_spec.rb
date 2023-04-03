@@ -23,6 +23,7 @@ RSpec.describe Team, type: :model do
           create(:match, away_team: team, away_goals: 6, home_goals: 2)
           create(:match, home_team: team, home_goals: 3, away_goals: 1)
           create(:match, home_team: team, home_goals: 2, away_goals: 3)
+          create(:match, home_team: team, home_goals: 0, away_goals: 0)
         end
 
         it "returns number of goal for this team" do
@@ -35,6 +36,10 @@ RSpec.describe Team, type: :model do
 
         it "returns number of wins for team" do
           expect(team.group_wins).to eq(3)
+        end
+
+        it "returns number of draws for team" do
+          expect(team.group_draws).to eq(1)
         end
       end
     end

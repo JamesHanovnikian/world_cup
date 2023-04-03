@@ -23,9 +23,9 @@ class Team < ApplicationRecord
 
   def group_draws
     draws = 0
-    matches = Match.where(home_team_id: id) && Match.where(away_team_id: id)
+    matches = Match.where(home_team_id: id) || Match.where(away_team_id: id)
     matches.each do |match|
-      if match.home_goals == match.away_goals
+      if match.away_goals == match.home_goals
         draws += 1
       end
     end
