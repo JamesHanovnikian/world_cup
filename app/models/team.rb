@@ -6,13 +6,13 @@ class Team < ApplicationRecord
 
   def group_wins
     wins = 0
-    home_matches = Match.where(home_team_id: id)
+    home_matches = Match.where(home_team: self)
     home_matches.each do |home_match|
       if home_match.home_goals > home_match.away_goals
         wins += 1
       end
     end
-    away_matches = Match.where(away_team_id: id)
+    away_matches = Match.where(away_team: self)
     away_matches.each do |away_match|
       if away_match.away_goals > away_match.home_goals
         wins += 1
@@ -21,9 +21,26 @@ class Team < ApplicationRecord
     wins
   end
 
+  def group_losses
+    losses = 0
+    home_matches = Match.where(home_team: self)
+    home_matches.each do |home_match|
+      if home_match.home_goals < home_match.away_goals
+        losses += 1
+      end
+    end
+    away_matches = Match.where(away_team: self)
+    away_matches.each do |away_match|
+      if away_match.away_goals < away_match.home_goals
+        losses += 1
+      end
+    end
+    losses
+  end
+
   def group_draws
     draws = 0
-    matches = Match.where(home_team_id: id) || Match.where(away_team_id: id)
+    matches = Match.where(home_team: self) || Match.where(away_team: self)
     matches.each do |match|
       if match.away_goals == match.home_goals
         draws += 1

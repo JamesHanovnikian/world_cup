@@ -8,6 +8,14 @@ RSpec.describe Team, type: :model do
       it "returns number of goal for this team" do
         expect(team.total_goals).to eq(0)
       end
+
+      it "returns number of wins for this team" do
+        expect(team.group_wins).to eq(0)
+      end
+
+      it "returns total group points for this team" do
+        expect(team.total_points).to eq(0)
+      end
     end
 
     context "when team has played matches" do
@@ -38,8 +46,16 @@ RSpec.describe Team, type: :model do
           expect(team.group_wins).to eq(3)
         end
 
+        it "returns number of wins for team" do
+          expect(team.group_losses).to eq(1)
+        end
+
         it "returns number of draws for team" do
           expect(team.group_draws).to eq(1)
+        end
+
+        it "returns total points for team" do
+          expect(team.total_points).to eq(10)
         end
       end
     end
