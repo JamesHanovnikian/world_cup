@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe Team, type: :model do
-  describe "#total_goals" do
+  describe "team stats" do
     let(:team) { FactoryBot.create(:team) }
 
     context "when team hasn't played any matches" do
@@ -56,6 +56,10 @@ RSpec.describe Team, type: :model do
 
         it "returns total points for team" do
           expect(team.total_points).to eq(10)
+        end
+
+        it "returns goal differential for team" do
+          expect(team.goal_diff).to eq(6)
         end
       end
     end
