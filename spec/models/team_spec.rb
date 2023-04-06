@@ -5,7 +5,7 @@ RSpec.describe Team, type: :model do
     let(:team) { FactoryBot.create(:team) }
 
     context "when team hasn't played any matches" do
-      it "returns number of goal for this team" do
+      it "returns number of goals for this team" do
         expect(team.total_goals).to eq(0)
       end
 
