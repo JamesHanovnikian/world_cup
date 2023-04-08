@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :stadium do
-    name { "Whatever" }
+    sequence(:name) { |n| "Stadium#{n}" }
     capacity { 20000 }
-    location { "Doha" }
+    location { "Qatar" }
   end
 end
