@@ -207,45 +207,23 @@ FactoryBot.create(:team,
                   flag_img_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Ghana.svg/1599px-Flag_of_Ghana.svg.png",
                   tournament_group: TournamentGroup.find_by(name: "H"))
 
-Stadium.create(
-  name: "Al Bayt",
-  location: "Al Khor",
-  capacity: 60000,
-)
+FactoryBot.create(:stadium,
+                  :albhayt)
 
-Stadium.create(
-  name: "Education City",
-  location: "Al Rayyan",
-  capacity: 40000,
-)
+FactoryBot.create(:stadium,
+                  :educationcity)
 
-Stadium.create(
-  name: "Stadium 974",
-  location: "Doha",
-  capacity: 40000,
-)
+FactoryBot.create(:stadium,
+                  :stadium974)
 
-Stadium.create(
-  name: "Khalifa International Stadium",
-  location: "Doha",
-  capacity: 40000,
-)
+FactoryBot.create(:stadium,
+                  :khalifa)
 
-Stadium.create(
-  name: "Ahmed Bin Ali Stadium",
-  location: "Umm Al Afaei",
-  capacity: 40000,
-)
+FactoryBot.create(:stadium,
+                  :ahmed)
 
-Stadium.create(
-  name: "Al Thummama Stadium",
-  location: "Doha",
-  capacity: 40000,
-)
+FactoryBot.create(:stadium,
+                  :althummama)
 
-Stadium.create(
-  name: "Al Janoub",
-  location: "Al Wakrah",
-  capacity: 40000,
-)
-
+FactoryBot.create(:stadium,
+                  :aljanoub)
