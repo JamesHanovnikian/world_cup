@@ -227,3 +227,6 @@ FactoryBot.create(:stadium,
 
 FactoryBot.create(:stadium,
                   :aljanoub)
+
+# Loop through each Tournament Group?
+# Have each team within each group play eachother.

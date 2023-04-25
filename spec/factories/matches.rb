@@ -1,6 +1,7 @@
 FactoryBot.define do
+  range = (Date.new(2022, 11, 20)..Date.new(2022, 12, 13))
   factory :match do
-    date { Time.now }
+    date { rand(range) }
     association :home_team, factory: :team
     association :away_team, factory: :team
     stadium
