@@ -60,13 +60,13 @@ FactoryBot.create(:team,
                   :netherlands,
                   seed_rank: 1,
                   flag_img_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/1920px-Flag_of_the_Netherlands.svg.png",
-                  tournament_group: TournamentGroup.find_by(name: "C"))
+                  tournament_group: TournamentGroup.find_by(name: "A"))
 
 FactoryBot.create(:team,
                   :senegal,
                   seed_rank: 2,
                   flag_img_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Flag_of_Senegal.svg/1920px-Flag_of_Senegal.svg.png",
-                  tournament_group: TournamentGroup.find_by(name: "C"))
+                  tournament_group: TournamentGroup.find_by(name: "A"))
 
 FactoryBot.create(:team,
                   :ecuador,
@@ -82,6 +82,12 @@ FactoryBot.create(:team,
 
 FactoryBot.create(:team,
                   :england,
+                  seed_rank: 1,
+                  flag_img_url: "https://upload.wikimedia.org/wikipedia/en/thumb/b/be/Flag_of_England.svg/1600px-Flag_of_England.svg.png?20111003040319",
+                  tournament_group: TournamentGroup.find_by(name: "B"))
+
+FactoryBot.create(:team,
+                  :usa,
                   seed_rank: 1,
                   flag_img_url: "https://upload.wikimedia.org/wikipedia/en/thumb/b/be/Flag_of_England.svg/1600px-Flag_of_England.svg.png?20111003040319",
                   tournament_group: TournamentGroup.find_by(name: "B"))
@@ -113,6 +119,12 @@ FactoryBot.create(:team,
 
 FactoryBot.create(:team,
                   :denmark,
+                  seed_rank: 2,
+                  flag_img_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Flag_of_Denmark.svg/1920px-Flag_of_Denmark.svg.png",
+                  tournament_group: TournamentGroup.find_by(name: "D"))
+
+FactoryBot.create(:team,
+                  :australia,
                   seed_rank: 2,
                   flag_img_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Flag_of_Denmark.svg/1920px-Flag_of_Denmark.svg.png",
                   tournament_group: TournamentGroup.find_by(name: "D"))
@@ -155,6 +167,12 @@ FactoryBot.create(:team,
 
 FactoryBot.create(:team,
                   :canada,
+                  seed_rank: 3,
+                  flag_img_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/2560px-Flag_of_Canada_%28Pantone%29.svg.png",
+                  tournament_group: TournamentGroup.find_by(name: "F"))
+
+FactoryBot.create(:team,
+                  :croatia,
                   seed_rank: 3,
                   flag_img_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/2560px-Flag_of_Canada_%28Pantone%29.svg.png",
                   tournament_group: TournamentGroup.find_by(name: "F"))
@@ -228,5 +246,508 @@ FactoryBot.create(:stadium,
 FactoryBot.create(:stadium,
                   :aljanoub)
 
-# Loop through each Tournament Group?
-# Have each team within each group play eachother.
+# t.datetime "date"
+# t.integer "home_team_id"
+# t.integer "away_team_id"
+# t.integer "stadium_id"
+# t.datetime "created_at", precision: 6, null: false
+# t.datetime "updated_at", precision: 6, null: false
+# t.integer "home_goals"
+# t.integer "away_goals"
+# t.integer "tournament_group_id"
+
+# Group 1 matches.
+
+Match.create(
+  date: Date.new(2022, 11, 21, 12),
+  home_team_id: 6,
+  away_team_id: 5,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 1,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 20, 12),
+  home_team_id: 8,
+  away_team_id: 7,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 1,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 6,
+  away_team_id: 8,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 1,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 5,
+  away_team_id: 7,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 1,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 5,
+  away_team_id: 8,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 1,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 6,
+  away_team_id: 7,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 1,
+)
+
+# Group 2 matches.
+
+Match.create(
+  date: Date.new(2022, 11, 21, 12),
+  home_team_id: 9,
+  away_team_id: 11,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 2,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 21, 12),
+  home_team_id: 10,
+  away_team_id: 12,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 2,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 21, 12),
+  home_team_id: 12,
+  away_team_id: 11,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 2,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 9,
+  away_team_id: 10,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 2,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 12,
+  away_team_id: 9,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 2,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 10,
+  away_team_id: 11,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 2,
+)
+
+#  Group 3
+
+Match.create(
+  date: Date.new(2022, 11, 21, 12),
+  home_team_id: 1,
+  away_team_id: 2,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 3,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 1,
+  away_team_id: 3,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 3,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 1,
+  away_team_id: 4,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 3,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 2,
+  away_team_id: 3,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 3,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 2,
+  away_team_id: 4,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 3,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 3,
+  away_team_id: 4,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 3,
+)
+
+# Group 4
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 13,
+  away_team_id: 14,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 4,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 13,
+  away_team_id: 15,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 4,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 13,
+  away_team_id: 16,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 4,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 14,
+  away_team_id: 15,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 4,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 14,
+  away_team_id: 16,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 4,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 15,
+  away_team_id: 16,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 4,
+)
+
+# Group 5
+
+Match.create(
+  date: Date.new(2022, 11, 21, 12),
+  home_team_id: 17,
+  away_team_id: 18,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 5,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 17,
+  away_team_id: 19,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 5,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 17,
+  away_team_id: 20,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 5,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 18,
+  away_team_id: 19,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 5,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 19,
+  away_team_id: 20,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 5,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 18,
+  away_team_id: 20,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 5,
+)
+
+# Group 6
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 22,
+  away_team_id: 24,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 6,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 21,
+  away_team_id: 23,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 6,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 21,
+  away_team_id: 22,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 6,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 24,
+  away_team_id: 23,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 6,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 22,
+  away_team_id: 24,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 6,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 23,
+  away_team_id: 21,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 6,
+)
+
+# Group 7
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 26,
+  away_team_id: 28,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 7,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 27,
+  away_team_id: 28,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 7,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 25,
+  away_team_id: 28,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 7,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 25,
+  away_team_id: 26,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 7,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 25,
+  away_team_id: 27,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 7,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 26,
+  away_team_id: 27,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 7,
+)
+
+# Group 8
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 29,
+  away_team_id: 30,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 8,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 29,
+  away_team_id: 31,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 8,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 29,
+  away_team_id: 32,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 8,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 30,
+  away_team_id: 31,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 8,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 31,
+  away_team_id: 32,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 8,
+)
+
+Match.create(
+  date: Date.new(2022, 11, 25, 12),
+  home_team_id: 30,
+  away_team_id: 32,
+  stadium_id: 4,
+  home_goals: 0,
+  away_goals: 0,
+  tournament_group_id: 8,
+)

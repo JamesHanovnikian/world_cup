@@ -60,6 +60,12 @@ FactoryBot.define do
       name { "England" }
     end
 
+    trait :usa do
+      jersey_primary { "White" }
+      jersey_secondary { "Blue" }
+      name { "United States" }
+    end
+
     trait :iran do
       jersey_primary { "Green" }
       jersey_secondary { "White" }
@@ -90,6 +96,12 @@ FactoryBot.define do
       name { "Denmark" }
     end
 
+    trait :australia do
+      jersey_primary { "Yellow" }
+      jersey_secondary { "Blue" }
+      name { "Australia" }
+    end
+
     trait :japan do
       jersey_primary { "Blue" }
       jersey_secondary { "White" }
@@ -100,6 +112,12 @@ FactoryBot.define do
       jersey_primary { "Red" }
       jersey_secondary { "White" }
       name { "Spain" }
+    end
+
+    trait :croatia do
+      jersey_primary { "White/Red" }
+      jersey_secondary { "Red" }
+      name { "Croatia" }
     end
 
     trait :germany do
@@ -136,12 +154,6 @@ FactoryBot.define do
       jersey_primary { "Red" }
       jersey_secondary { "Red" }
       name { "Belgium" }
-    end
-
-    trait :brazil do
-      jersey_primary { "Yellow" }
-      jersey_secondary { "Blue" }
-      name { "Brazil" }
     end
 
     trait :brazil do
