@@ -61,6 +61,7 @@ RSpec.describe Team, type: :model do
         it "returns goal differential for team" do
           expect(team.goal_diff).to eq(6)
         end
+        
       end
     end
   end

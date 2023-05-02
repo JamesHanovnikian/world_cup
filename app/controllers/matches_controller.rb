@@ -10,6 +10,11 @@ class MatchesController < ApplicationController
     render json: match.as_json
   end
 
+  def show
+    match = Match.find_by(id: params[:id])
+    render json: match
+  end
+
   def index
     matches = Match.all
     render json: matches.as_json
