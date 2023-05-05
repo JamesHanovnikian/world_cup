@@ -18,6 +18,11 @@ Rails.application.routes.draw do
   post "/matches" => "matches#create"
   patch "/matches/:id" => "matches#update"
 
+  get "/tournament_groups" => "tournament_groups#index"
+  get "/tournament_groups/:id" => "tournament_groups#show"
+  post "/tournament_groups" => "tournament_groups#create"
+  patch "/tournament_groups/:id" => "tournament_groups#update"
+
   post "/users" => "users#create"
   post "/sessions" => "sessions#create"
 
