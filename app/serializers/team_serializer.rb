@@ -5,6 +5,7 @@ class TeamSerializer < ActiveModel::Serializer
     :total_goals,
     :goals_allowed,
     :goal_diff,
+    :group_losses,
     :total_points,
     :name,
     :seed_rank,
