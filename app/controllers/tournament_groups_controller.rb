@@ -5,7 +5,7 @@ class TournamentGroupsController < ApplicationController
   end
 
   def show
-    tournament_group = TournamentGroup.find_by(id: params[:id])
+    tournament_group = TournamentGroup.includes(:teams, matches: [:home_team, :away_team]).find_by(id: params[:id])
     render json: tournament_group
   end
 end

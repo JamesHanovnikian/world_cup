@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_05_002309) do
+ActiveRecord::Schema.define(version: 2023_06_21_013244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2023_02_05_002309) do
     t.integer "home_goals"
     t.integer "away_goals"
     t.integer "tournament_group_id"
+    t.index ["home_team_id", "away_team_id"], name: "index_matches_on_home_team_id_and_away_team_id"
   end
 
   create_table "stadia", force: :cascade do |t|
